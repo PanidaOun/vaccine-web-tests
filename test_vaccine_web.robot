@@ -12,22 +12,21 @@ ${VACCINE}    Pfizer
 
 *** Test Cases ***
 #  Verify 2 items on the home page
-Test Home page if contain My info button(check info)
+Test Home page if contain My info button(check info) and register button
 	Open Browser to Home Page
 	Check has info button
-Test Home page if contain register button
-    Open Browser to Home Page
+    Go Back to Home Page
     Check has register button
+    Go Back to Home Page
 
 #  Test create reservation, Verify that the registration was created.
 Test if can create a reservation
-    Open Browser to Home Page
     Create reservation
     Check create reservation
+    Go Back to Home Page
 
 #  Test cancel reservation
 Test if can cancel a reservation
-    Open Browser to Home Page
     Cancel reservation
     Check cancel reservation
 
@@ -37,6 +36,9 @@ Test if can cancel a reservation
 
 Open Browser to Home Page
 	Open Browser  ${URL}  ${BROWSER}
+
+Go Back to Home Page
+    Click Element   xpath:/html/body/div[2]/div/div[1]/div[1]/div[1]/a
 
 Check has info button
 	Page Should Contain     Your Information
